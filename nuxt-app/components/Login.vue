@@ -20,18 +20,66 @@
   </template>
   
   <script setup>
-  import { useLogin } from '@nuxtjs/auth';
-  
-  const { login, error } = useLogin();
+  import { ref } from 'vue';
+  import { useRouter } from 'vue-router';
   
   const username = ref('');
   const password = ref('');
+  const error = ref(null);
+  const router = useRouter();
   
   const handleSubmit = async () => {
     try {
-      await login({ username: username.value, password: password.value });
-    } catch (error) {
-      console.error(error);
+      const response = await fetch('http://127.0.0.1:8000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+          username: username.value,
+          password: password.value,
+        }),
+      });
+  
+      if (!response.ok) {
+        throw new Error('Invalid credentials');
+      }
+  
+      const data = await response.json();
+  
+      // Store the token in localStorage or a cookie
+      localStorage.setItem('access_token', data.access_token);
+  
+      // Redirect to a protected page
+      router.push('/collection'); // Adjust as per your routes
+    } catch (err) {
+      error.value = err.message;
     }
   };
   </script>
+  
+  <style scoped>
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .form-group label {
+    margin-right: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  </style>

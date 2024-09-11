@@ -3,5 +3,5 @@ export interface CollectionItem {
     game_name: string;
     game_status: string;
     expires_at: string;
-    createds_at: string;
+    created_at: string;
 }
