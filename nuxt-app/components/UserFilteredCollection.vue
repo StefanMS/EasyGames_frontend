@@ -11,44 +11,76 @@
             days: {{ item.countdown.days}}
             hours: {{ item.countdown.hours}}
           </p>
+          <button class="neon-button" @click="placeBid(item.id)">Place Bid</button>
         </li>
           
       </ul>
     </div>
-  </template>
-  
-  <script setup lang="ts">
-  import { ref, onMounted } from 'vue';
-  import { useRouter } from 'vue-router';
-  import type { UserCollectionItem } from '~/types/user_collection';
-  import GameCard from './GameCard.vue';
-  
-  const user_collection = ref<UserCollectionItem[]>([]);
-  const router = useRouter();
+</template>
 
-  onMounted(async () => {
-    try {
-      const accessToken = localStorage.getItem('access_token');
-      if (accessToken) {
-        const response = await fetch('http://127.0.0.1:8000/user-collections', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${accessToken}`
-          }
-        });
-  
-        if (!response.ok) {
-          throw new Error('Failed to fetch user collections');
+<script setup lang="ts">
+import { ref, onMounted } from 'vue';
+import { useRouter } from 'vue-router';
+import type { UserCollectionItem } from '~/types/user_collection';
+import GameCard from './GameCard.vue';
+import '@/assets/css/neon-button.css'
+
+const user_collection = ref<UserCollectionItem[]>([]);
+const router = useRouter();
+
+onMounted(async () => {
+  try {
+    const accessToken = localStorage.getItem('access_token');
+    if (accessToken) {
+      const response = await fetch('http://127.0.0.1:8000/user-collections', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${accessToken}`
         }
-  
-        user_collection.value = await response.json();
-      } else {
-        console.error('No access token found in localStorage');
-        router.push('/collection');
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch user collections');
       }
-    } catch (error) {
-      console.error('Error fetching user collections:', error);
+
+      user_collection.value = await response.json();
+    } else {
+      console.error('No access token found in localStorage');
+      router.push('/collection');
     }
-  });
-  </script>
+  } catch (error) {
+    console.error('Error fetching user collections:', error);
+  }
+});
+
+async function placeBid(game_id: number){
+  try {
+    const accessToken = localStorage.getItem('access_token');
+    if (accessToken) {
+      const response = await $fetch(`http://127.0.0.1:8000/bids/?game_id=${game_id}`, {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${accessToken}`
+        },
+        body: {
+          "game_id": game_id
+        }
+      }) as Response;
+
+      if (!response.ok) {
+        throw new Error('Failed to place bid');
+      }
+
+      const result = await response.json();
+      console.log('Bid placed successfully: ', result);
+    } else {
+      console.error('No access token found in localStorage')
+    } 
+  } catch (error) {
+      console.error('Error placing bid: ', error);
+    }
+};
+
+</script>

@@ -14,7 +14,6 @@
   </script>
   
   <style scoped>
-  /* Add your styles for the game card here */
   .game-card {
     border: 1px solid #ccc;
     padding: 10px;

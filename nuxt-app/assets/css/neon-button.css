@@ -1,0 +1,24 @@
+.neon-button {
+    background-color: #8a2be2; /* Purple background */
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+    transition: 0.3s;
+    box-shadow: 0 0 5px #8a2be2, 0 0 20px #8a2be2, 0 0 40px #8a2be2, 0 0 80px #8a2be2;
+  }
+  
+  .neon-button:hover {
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 80px #ff00ff;
+    background-color: #ff00ff;
+  }
+  
+  .neon-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 5px #8a2be2;
+  }

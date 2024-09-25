@@ -47,11 +47,9 @@
   
       const data = await response.json();
   
-      // Store the token in localStorage or a cookie
       localStorage.setItem('access_token', data.access_token);
   
-      // Redirect to a protected page
-      router.push('/collection'); // Adjust as per your routes
+      router.push('/user_collection');
     } catch (err) {
       error.value = err.message;
     }
