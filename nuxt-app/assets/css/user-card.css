@@ -1,0 +1,24 @@
+.user-card {
+    background-color: #1c1c1c; /* Dark background */
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #8a2be2, 0 0 30px #8a2be2, 0 0 50px #8a2be2, 0 0 80px #8a2be2;
+  }
+  
+  .user-info {
+    font-size: 18px;
+    margin: 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+    color: #8a2be2; /* Same purple as the button */
+  }
+  
+  .user-card:hover {
+    box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 80px #ff00ff;
+  }
+  

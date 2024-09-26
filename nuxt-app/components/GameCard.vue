@@ -5,6 +5,7 @@
   </template>
   
   <script setup>
+  import '@/assets/css/game-card.css'
   defineProps({
     item: {
       type: Object,
@@ -12,13 +13,3 @@
     }
   });
   </script>
-  
-  <style scoped>
-  .game-card {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  </style>
-  

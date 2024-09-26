@@ -1,14 +1,40 @@
 <template>
     <NavBar />
     <div>
-        <h1>Account</h1>
+      <UserCard v-if="user" :user="user" />
     </div>
     <Footer />
 </template>
 
 <script setup lang="ts">
-import type { User } from '../types/user';
+import { useCurrentUser } from '~/composables/useJwt';
+import type { User } from "~/types/user";
 
-// TODO get current user
-// const { data: user } = await useFetch<User>('http://127.0.0.1:8000/user/')
+const accessToken = localStorage.getItem('access_token');
+const currentUser = useCurrentUser(accessToken);
+
+let user: User | null = null;
+
+if (currentUser) {
+  try {
+    const userId = currentUser.userId;
+    const { data, error } = await useFetch<User>(`http://127.0.0.1:8000/users/${userId}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('access_token')}`
+      }
+    });
+
+    if (error.value) {
+      throw new Error(`Failed to fetch user details: ${error.value.message}`);
+    }
+
+    user = data.value;
+
+  } catch (error) {
+    console.error('An error occurred while fetching the user details:', error);
+  }
+} else {
+  console.error('No current user found');
+}
+
 </script>

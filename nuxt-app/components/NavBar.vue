@@ -1,14 +1,19 @@
 <template>
-    <div>
-      <header>NavBar</header>
-      <button v-if="!userLoggedIn" @click="handleLogin">Login</button>
-      <button v-else @click="handleLogout">Logout</button>
-    </div>
-  </template>
+  <div class="navbar">
+    <header class="navbar-header">EasyGames</header>
+    <nav class="navbar-links">
+      <button class="navbar-button" @click="navigateHome">Home</button>
+      <button v-if="userLoggedIn" class="navbar-button" @click="navigateAccount">Account</button>
+      <button v-if="!userLoggedIn" class="navbar-button" @click="handleLogin">Login</button>
+      <button v-else class="navbar-button" @click="handleLogout">Logout</button>
+    </nav>
+  </div>
+</template>
   
   <script setup>
   import { ref, onMounted } from 'vue';
   import { useRouter } from 'vue-router';
+  import "@/assets/css/navbar-header.css"
   
   const userLoggedIn = ref(false);
   const router = useRouter();
@@ -27,25 +32,21 @@
   const handleLogout = () => {
     localStorage.removeItem('access_token');
     userLoggedIn.value = false;
+    router.push('/collection');
 
   };
+
+  const navigateAccount = () => {
+    router.push('/account')
+  }
+
+  const navigateHome = () => {
+    if (userLoggedIn) {
+      router.push('/user_collection')
+    } else {
+      router.push('/collection')
+    }
+  }
+
   </script>
 
-
-
-
-<style scoped>
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4px;
-  border-bottom: 1px solid #ccc;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-</style>
