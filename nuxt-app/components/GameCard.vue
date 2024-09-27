@@ -1,7 +1,16 @@
 <template>
     <div class="game-card">
-      <h2>{{ item.game_name }}</h2>
+      <div class="game-card-info">
+
+            <div>{{ item.game_name }}</div>
+            <p>Capacity: {{ item.capacity }} / 100</p>
+            <p>
+              Expires in: 
+              <span>days: {{ item.countdown.days }}</span>
+              <span>hours: {{ item.countdown.hours }}</span>
+            </p>
       </div>
+    </div>
   </template>
   
   <script setup>

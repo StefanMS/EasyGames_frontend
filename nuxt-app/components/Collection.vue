@@ -4,9 +4,9 @@
         <li v-for="item in collection" :key="item.game_id">
             <!-- It's called props-->
             <GameCard :item="item" />
+            
         </li>
     </ul>
-    {{ collection }}
     </div>
 </template>
 

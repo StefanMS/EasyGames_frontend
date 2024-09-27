@@ -1,21 +1,14 @@
 <template>
-    <div>
-      <ul>
-        <li v-for="item in user_collection" :key="item.id">
+  <div>
+    <ul class="user-collection-grid">
+      <li v-for="item in user_collection" :key="item.id">
+        <div class="game-card-container">
           <GameCard :item="item" />
-          <p>
-            Capacity: {{ item.capacity}} / 100
-          </p>
-          <p>
-            Expires in: 
-            days: {{ item.countdown.days}}
-            hours: {{ item.countdown.hours}}
-          </p>
           <button class="neon-button" @click="placeBid(item.id)">Place Bid</button>
-        </li>
-          
-      </ul>
-    </div>
+        </div>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -24,6 +17,7 @@ import { useRouter } from 'vue-router';
 import type { UserCollectionItem } from '~/types/user_collection';
 import GameCard from './GameCard.vue';
 import '@/assets/css/neon-button.css'
+import '@/assets/css/user-collection.css'
 
 const user_collection = ref<UserCollectionItem[]>([]);
 const router = useRouter();
