@@ -54,12 +54,12 @@ onMounted(async () => {
   }
 });
 
-async function placeBid(game_id: number){
+const placeBid = async (game_id: number) => {
   try {
     const accessToken = localStorage.getItem('access_token');
     if (accessToken) {
-      const response = await $fetch(`http://127.0.0.1:8000/bids/?game_id=${game_id}`, {
-        method: 'post',
+      const { data, error } = await useFetch(`http://127.0.0.1:8000/bids/?game_id=${game_id}`, {
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${accessToken}`
@@ -67,20 +67,20 @@ async function placeBid(game_id: number){
         body: {
           "game_id": game_id
         }
-      }) as Response;
+      });
 
-      if (!response.ok) {
-        throw new Error('Failed to place bid');
+      if (error.value) {
+        throw new Error(`Failed to place bid: ${error.value.message}`);
       }
 
-      const result = await response.json();
-      console.log('Bid placed successfully: ', result);
+      console.log('Bid placed successfully:', data.value);
     } else {
-      console.error('No access token found in localStorage')
-    } 
-  } catch (error) {
-      console.error('Error placing bid: ', error);
+      console.error('No access token found in localStorage');
     }
+  } catch (error) {
+    console.error('Error placing bid:', error);
+  }
 };
+
 
 </script>

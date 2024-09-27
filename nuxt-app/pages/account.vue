@@ -1,11 +1,13 @@
 <template>
     <div>
       <UserCard v-if="user" :user="user" />
+      <TopUp v-if="user" :user_id="user.id" />
     </div>
 </template>
 
 <script setup lang="ts">
 import { useCurrentUser } from '~/composables/useJwt';
+import TopUp from '~/components/TopUp.vue';
 import type { User } from "~/types/user";
 
 const accessToken = localStorage.getItem('access_token');
