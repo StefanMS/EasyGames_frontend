@@ -14,12 +14,15 @@
   </template>
   
   <script setup lang="ts">
+
   import { ref } from 'vue';
+  
   import '@/assets/css/neon-button.css'
   import '@/assets/css/topup-modal.css'
   
   const amount = ref(0);
   const showModal = ref(false);
+  const emit = defineEmits(['topUpSuccess']);
   
   const props = defineProps({
     user_id: {
@@ -47,6 +50,7 @@
         }
   
         console.log('Top Up successful:', data.value);
+        emit('topUpSuccess');
         closeModal();
   
       } catch (err) {

@@ -1,0 +1,37 @@
+.how-to-play-container {
+    background-color: #1c1c1c;
+    border-radius: 1.5rem;
+    padding: 3rem;
+    box-shadow: 0 0 2rem #8a2be2, 0 0 6rem #ff00ff;
+    max-width: 80rem;
+    margin: 2rem auto;
+    }
+    
+    .neon-list {
+    font-family: 'Arial', sans-serif;
+    color: white;
+    font-size: 1.8rem;
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.8;
+    text-shadow: 0 0 0.5rem #8a2be2, 0 0 1.5rem #8a2be2;
+    }
+    
+    .neon-list li {
+    margin-bottom: 1.5rem;
+    }
+    
+    .neon-title {
+    font-family: 'Arial', sans-serif;
+    color: #8a2be2;
+    text-shadow: 0 0 1rem #8a2be2, 0 0 2rem #ff00ff;
+    font-size: 3.6rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    }
+    
+    .highlight {
+    color: #ff00ff;
+    font-weight: bold;
+    text-shadow: 0 0 1rem #ff00ff, 0 0 3rem #8a2be2;
+    }

@@ -2,8 +2,10 @@
     <div>
     <ul>
         <li v-for="item in collection" :key="item.game_id">
-            <!-- It's called props-->
-            <GameCard :item="item" />
+            <!-- <GameCard :item="item" /> -->
+             <div>
+                {{ item.game_name }}
+             </div>
             
         </li>
     </ul>

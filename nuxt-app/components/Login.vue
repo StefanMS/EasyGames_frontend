@@ -1,6 +1,6 @@
 <template>
     <div class="login-container">
-      <h1>Login</h1>
+      <h1 class="login-title">Login</h1>
       <form @submit.prevent="handleSubmit">
         <div class="form-group">
           <label for="username">Username:</label>
@@ -12,7 +12,7 @@
           <input type="password" id="password"  
    v-model="password" required />
         </div>
-        <button type="submit">Login</button>
+        <button class="submit-button neon-button" type="submit">Login</button>
       </form>
       <p v-if="error">{{ error }}</p>  
   
@@ -22,7 +22,7 @@
   <script setup>
   import { ref } from 'vue';
   import { useRouter } from 'vue-router';
-  import '@/assets/css/login-card.css'
+  import '@/assets/css/authenticate.css'
   
   const username = ref('');
   const password = ref('');
