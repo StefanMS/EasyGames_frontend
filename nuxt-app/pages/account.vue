@@ -1,9 +1,7 @@
 <template>
-    <NavBar />
     <div>
       <UserCard v-if="user" :user="user" />
     </div>
-    <Footer />
 </template>
 
 <script setup lang="ts">

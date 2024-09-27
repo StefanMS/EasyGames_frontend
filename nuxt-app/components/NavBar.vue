@@ -4,6 +4,7 @@
     <nav class="navbar-links">
       <button class="navbar-button" @click="navigateHome">Home</button>
       <button v-if="userLoggedIn" class="navbar-button" @click="navigateAccount">Account</button>
+      <button v-if="!userLoggedIn" class="navbar-button" @click="handleSignup">SignUp</button>
       <button v-if="!userLoggedIn" class="navbar-button" @click="handleLogin">Login</button>
       <button v-else class="navbar-button" @click="handleLogout">Logout</button>
     </nav>
@@ -46,6 +47,12 @@
     } else {
       router.push('/collection')
     }
+  }
+
+  const handleSignup = () => {
+    
+      router.push('/register')
+    
   }
 
   </script>
