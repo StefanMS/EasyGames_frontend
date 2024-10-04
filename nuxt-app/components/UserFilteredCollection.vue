@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAsyncData } from '#app';
 import type { UserCollectionItem } from '~/types/user_collection';
@@ -76,4 +76,9 @@ const placeBid = async (game_id: number) => {
     console.error('Error placing bid:', error);
   }
 };
+
+onMounted(async () => {
+  await refresh();
+});
+
 </script>

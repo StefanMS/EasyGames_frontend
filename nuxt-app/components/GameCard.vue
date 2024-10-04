@@ -1,8 +1,10 @@
 <template>
     <div class="game-card">
       <div class="game-card-info">
-
-            <div>{{ item.game_name }}</div>
+            {{ item.game_name }}
+            <div class="game-card-image">
+            <img :src="item.image_url" alt="Game Image" class="game-image" />
+            </div>
             <p>Capacity: {{ item.capacity }} / 100</p>
             <p>
               Expires in: 

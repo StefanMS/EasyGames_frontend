@@ -11,4 +11,5 @@ export interface Countdown {
     enrolled_user: boolean;
     capacity: number;
     countdown: Countdown;
+    image_url: string;
 }

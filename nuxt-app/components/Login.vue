@@ -50,7 +50,9 @@
   
       localStorage.setItem('access_token', data.access_token);
   
-      router.push('/user_collection');
+      router.push('/user_collection').then(() => {
+        window.location.reload();
+      });
     } catch (err) {
       error.value = err.message;
     }
