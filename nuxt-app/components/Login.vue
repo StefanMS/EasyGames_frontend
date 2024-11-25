@@ -28,10 +28,11 @@
   const password = ref('');
   const error = ref(null);
   const router = useRouter();
+  const config = useRuntimeConfig()
   
   const handleSubmit = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:8000/login', {
+      const response = await fetch(`${config.public.apiUrl}/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',

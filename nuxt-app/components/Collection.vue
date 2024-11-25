@@ -15,5 +15,7 @@
 <script setup lang="ts">
 import type { CollectionItem } from "~/types/collection";
 import GameCard from './GameCard.vue';
-const { data: collection } = await useFetch<CollectionItem[]>('http://127.0.0.1:8000/collections')
+
+const config = useRuntimeConfig()
+const { data: collection } = await useFetch<CollectionItem[]>(`${config.public.apiUrl}/collections`)
 </script>

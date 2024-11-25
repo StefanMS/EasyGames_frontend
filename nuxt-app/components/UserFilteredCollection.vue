@@ -21,13 +21,14 @@ import GameCard from './GameCard.vue';
 import '@/assets/css/neon-button.css';
 import '@/assets/css/user-collection.css';
 
+const config = useRuntimeConfig();
 const fetchUserCollection = async () => {
   const accessToken = localStorage.getItem('access_token');
   if (!accessToken) {
     throw new Error('No access token found in localStorage');
   }
 
-  const response = await fetch('http://127.0.0.1:8000/user-collections', {
+  const response = await fetch(`${config.public.apiUrl}/user-collections`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -54,7 +55,7 @@ const placeBid = async (game_id: number) => {
       return;
     }
 
-    const { data, error } = await useFetch(`http://127.0.0.1:8000/bids/?game_id=${game_id}`, {
+    const { data, error } = await useFetch(`${config.public.apiUrl}/bids/?game_id=${game_id}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

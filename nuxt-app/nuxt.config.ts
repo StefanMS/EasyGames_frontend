@@ -7,4 +7,9 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss"
     ],
   css: ['~/assets/css/global.css'],
+  runtimeConfig: {
+    public: {
+      apiUrl: process.env.NUXT_PUBLIC_API_URL || 'http://localhost:8000',
+    },
+  },
 })

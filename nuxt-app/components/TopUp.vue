@@ -23,7 +23,7 @@
   const amount = ref(0);
   const showModal = ref(false);
   const emit = defineEmits(['topUpSuccess']);
-  
+  const config = useRuntimeConfig();
   const props = defineProps({
     user_id: {
       type: Number,
@@ -34,7 +34,7 @@
   const handleTopUp = async () => {
     if (amount.value > 0) {
       try {
-        const { data, error } = await useFetch(`http://127.0.0.1:8000/users/${props.user_id}/top-up/${amount.value}`, {
+        const { data, error } = await useFetch(`${config.public.apiUrl}/users/${props.user_id}/top-up/${amount.value}`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

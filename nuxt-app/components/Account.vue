@@ -13,6 +13,7 @@
   import type { User } from "~/types/user";
   
   const user = ref<User | null>(null);
+  const config = useRuntimeConfig()
   
   const refreshUserData = async () => {
     const accessToken = localStorage.getItem('access_token');
@@ -21,7 +22,7 @@
     if (currentUser) {
       try {
         const userId = currentUser.userId;
-        const { data, error } = await useFetch<User>(`http://127.0.0.1:8000/users/${userId}`, {
+        const { data, error } = await useFetch<User>(`${config.public.apiUrl}/users/${userId}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('access_token')}`,
           },
