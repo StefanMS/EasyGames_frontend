@@ -31,7 +31,7 @@
 
 <script>
 import '@/assets/css/authenticate.css'
-
+const config = useRuntimeConfig()
 export default {
   data() {
     return {
