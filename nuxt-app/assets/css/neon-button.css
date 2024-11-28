@@ -1,0 +1,75 @@
+.neon-button {
+  background-color: #8a2be2;
+  border: none;
+  border-radius: 1.2rem;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  position: block;
+  transition: 0.3s;
+  box-shadow: 0 0 0.5rem #8a2be2, 0 0 2rem #8a2be2, 0 0 4rem #8a2be2, 0 0 8rem #8a2be2;
+}
+
+.neon-button:hover {
+  box-shadow: 0 0 1rem #ff00ff, 0 0 2rem #ff00ff, 0 0 4rem #ff00ff, 0 0 8rem #ff00ff;
+  background-color: #ff00ff;
+}
+
+.neon-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 0.5rem #8a2be2;
+}
+
+.neon-button-purple {
+  background-color: #8a2be2;
+  border: none;
+  border-radius: 1.2rem;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  position: block;
+  transition: 0.3s;
+  box-shadow: 0 0 0.5rem #8a2be2, 0 0 2rem #8a2be2, 0 0 4rem #8a2be2, 0 0 8rem #8a2be2;
+}
+
+.neon-button-purple:hover {
+  box-shadow: 0 0 1rem #ff00ff, 0 0 2rem #ff00ff, 0 0 4rem #ff00ff, 0 0 8rem #ff00ff;
+  background-color: #ff00ff;
+}
+
+.neon-button-purple:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 0.5rem #8a2be2;
+}
+
+
+.neon-button-pink {
+  background-color: #b216bb;
+  border: none;
+  border-radius: 1.2rem;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  position: block;
+  transition: 0.3s;
+  box-shadow: 0 0 0.5rem #8a2be2, 0 0 2rem #8a2be2, 0 0 4rem #8a2be2, 0 0 8rem #8a2be2;
+}
+
+.neon-button-pink:hover {
+  box-shadow: 0 0 1rem #ff00ff, 0 0 2rem #ff00ff, 0 0 4rem #ff00ff, 0 0 8rem #ff00ff;
+  background-color: #ff00ff;
+}
+
+.neon-button-pink:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 0.5rem #8a2be2;
+}

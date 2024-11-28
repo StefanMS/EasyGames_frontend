@@ -1,0 +1,27 @@
+.user-collection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
+    margin-left: 20rem;
+    margin-right: 20rem;
+    font-size: 2rem;
+
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .game-card-container {
+    background-color: #fff;
+    border-radius: 1.2rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }

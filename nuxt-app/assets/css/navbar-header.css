@@ -1,0 +1,39 @@
+.navbar {
+  background-color: #282c34;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar-header {
+  color: #8a2be2;
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-button {
+  background-color: #8a2be2;
+  color: white;
+  border: none;
+  border-radius: 0.8rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.navbar-button:hover {
+  background-color: #ff00ff;
+  transform: scale(1.05);
+}
+
+.navbar-button:active {
+  transform: scale(0.95);
+}

@@ -1,0 +1,4 @@
+<template>
+    <Collection />
+  </template>
+

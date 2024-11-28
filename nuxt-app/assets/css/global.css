@@ -1,0 +1,21 @@
+/* global.css */
+
+html, body {
+    margin: 0;
+    font-size: 62.5%;
+    
+}
+
+body {
+    height: 100vh;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.page-container {
+    flex-grow: 1;
+}

@@ -1,0 +1,23 @@
+.user-card {
+  background-color: #1c1c1c;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  text-align: center;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  transition: 0.3s;
+  box-shadow: 0 0 1rem #8a2be2, 0 0 3rem #8a2be2, 0 0 5rem #8a2be2, 0 0 8rem #8a2be2;
+}
+
+.user-info {
+  font-size: 1.8rem;
+  margin: 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  transition: color 0.3s ease;
+  color: #8a2be2;
+}
+
+.user-card:hover {
+  box-shadow: 0 0 2rem #ff00ff, 0 0 4rem #ff00ff, 0 0 8rem #ff00ff;
+}

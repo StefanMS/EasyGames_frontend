@@ -1,0 +1,47 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.8rem;
+  max-width: 40rem;
+  width: 100%;
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-size: 2rem;
+}
+
+.close-button {
+  background-color: #f44336;
+  border: none;
+  border-radius: 1.2rem; /* 12px to rem */
+  color: white;
+  padding: 1rem 2rem; /* 10px 20px to rem */
+  font-size: 1.6rem; /* 16px to rem */
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem; /* 1.5px to rem */
+  transition: 0.3s;
+  box-shadow: 0 0 0.5rem #f44336, 0 0 2rem #f44336, 0 0 4rem #f44336, 0 0 8rem #f44336; /* 5px, 20px, 40px, 80px to rem */
+}
+
+.close-button:hover {
+  box-shadow: 0 0 1rem #ff6347, 0 0 2rem #ff6347, 0 0 4rem #ff6347, 0 0 8rem #ff6347; /* 10px, 20px, 40px, 80px to rem */
+  background-color: #ff6347;
+}
+
+.close-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 0.5rem #f44336; /* 5px to rem */
+}
