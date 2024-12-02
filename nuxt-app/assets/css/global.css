@@ -1,8 +1,10 @@
 /* global.css */
+@import '@fontsource/press-start-2p';
 
 html, body {
     margin: 0;
-    font-size: 62.5%;
+    font-size: 50%;
+    font-family: 'Press Start 2P', sans-serif;
     
 }
 
@@ -18,4 +20,5 @@ body {
 
 .page-container {
     flex-grow: 1;
+    background: #462d89;
 }

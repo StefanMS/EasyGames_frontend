@@ -4,8 +4,8 @@
     gap: 1rem;
     justify-content: center;
     padding: 1rem;
-    margin-left: 20rem;
-    margin-right: 20rem;
+    margin-left: 22rem;
+    margin-right: 22rem;
     font-size: 2rem;
 
   }
@@ -16,7 +16,7 @@
   }
 
   .game-card-container {
-    background-color: #fff;
+    background-color: #58458a;
     border-radius: 1.2rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
     padding: 2rem;

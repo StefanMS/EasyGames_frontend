@@ -1,0 +1,181 @@
+.navbar {
+  background-color: #462d89;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-header {
+  color: #8a2be2;
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-right: 10%;
+}
+
+.navbar-welcome {
+  color: white;
+  font-size: 1.4rem;
+  font-family: 'Press Start 2P', sans-serif;
+  margin-right: auto;
+  align-items: start;
+  margin-left: 10%;
+}
+
+.navbar-button {
+  background-color: #8a2be2;
+  color: white;
+  border: none;
+  border-radius: 0.8rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.navbar-button:hover {
+  background-color: #ff00ff;
+  transform: scale(1.05);
+}
+
+.navbar-button:active {
+  transform: scale(0.95);
+}
+
+.navbar-account {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #d946ef);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.navbar-account:hover {
+  transform: scale(1.1);
+}
+
+.navbar-account-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/456/456212.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+
+.navbar-dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  background-color: #282c34;
+  border: 1px solid #8a2be2;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.dropdown-content .dropdown-item {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  text-align: left;
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content .dropdown-item:hover {
+  background-color: #ff00ff;
+}
+
+.navbar-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.wallet-banner {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #462d89;
+  padding: 1.5rem;
+}
+
+.wallet-container {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(90deg, #5d17eb 0%, #843df2 100%);
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-family: 'Press Start 2P', sans-serif;
+  font-size: 1.4rem;
+  margin-right: 10%;
+  width: auto;
+  max-width: max-content;
+}
+
+.wallet-label {
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+  text-transform: uppercase;
+}
+
+.wallet-value {
+  display: flex;
+  align-items: center;
+  background: #934ae2;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.coin-emoji {
+  margin-left: 1rem;
+  font-size: 1.4rem;
+}
+
+.game-banner {
+  display: flex;
+  background: linear-gradient(90deg, #4e53cb 0%, #a84daa 100%);
+  height: 15rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game-banner-header {
+  display: inline-flex;
+  color: white;
+  font-family: 'Press Start 2P', sans-serif;
+  font-size: 1.6rem;
+  padding: 2rem;
+  margin-left: 20%;
+}
+
+.game-banner-image {
+  display: inline-flex;
+  color: white;
+  font-size: 1.6rem;
+  object-fit: cover;
+  margin-right: 20%;
+}
