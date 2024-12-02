@@ -22,28 +22,8 @@
     </nav>
   </div>
 
-    <!-- TODO: different component -->
-  <div class="game-banner">
-    <div class="game-banner-header">
-      GAME OF THE WEEK
-    </div>
-    <div class="game-banner-image">
-      MINECRAFT
-    </div>
-  </div>
-
-
-
-  <!-- TODO: different component -->
-  <div v-if="user"class="wallet-banner">
-    <div class="wallet-container">
-      <div class="wallet-label">WALLET</div>
-        <div class="wallet-value">
-          {{ user.balance }}
-          <span class="coin-emoji">🪙</span>
-        </div>
-    </div>
-  </div>
+    <GameBanner />
+    <WalletBanner v-if="user" :user="user" />
 </template>
 
 
