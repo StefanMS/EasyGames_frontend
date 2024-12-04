@@ -1,7 +1,19 @@
 <template>
   <div>
+
+    <div class="search-container">
+      <label for="search-input">Search game:</label>
+      <input
+        id="search-input"
+        type="text"
+        v-model="searchedItem"
+        placeholder="Enter game name..."
+        class="search-input"
+      />
+    </div>
+
     <ul class="user-collection-grid">
-      <li v-for="item in user_collection" :key="item.id">
+      <li v-for="item in filteredGames" :key="item.id">
         <div class="game-card-container">
           <GameCard :item="item" />
           <button v-if="!item.enrolled_user" class="neon-button-pink" @click="placeBid(item.id)">Enroll</button>
@@ -13,15 +25,17 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAsyncData } from '#app';
 import type { UserCollectionItem } from '~/types/user_collection';
-import GameCard from './GameCard.vue';
+import GameCard from './GameCardUserCollection.vue';
 import '@/assets/css/neon-button.css';
 import '@/assets/css/user-collection.css';
 
 const config = useRuntimeConfig();
+const searchedItem = ref('');
+
 const fetchUserCollection = async () => {
   const accessToken = localStorage.getItem('access_token');
   if (!accessToken) {
@@ -43,7 +57,17 @@ const fetchUserCollection = async () => {
   return response.json();
 };
 
-const { data: user_collection, refresh } = await useAsyncData<UserCollectionItem[]>('user_collection', fetchUserCollection);
+const { data: user_collection, refresh } = await useAsyncData<UserCollectionItem[]>(
+  'user_collection', 
+  fetchUserCollection);
+
+
+const filteredGames = computed(() => {
+  if (!user_collection.value) return [];
+  return user_collection.value.filter((game) =>
+    game.game_name.toLowerCase().includes(searchedItem.value.toLowerCase())
+  );
+});
 
 const router = useRouter();
 

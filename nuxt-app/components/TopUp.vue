@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="topup-container">
       <button class="neon-button" @click="showModal = true">Top Up</button>
   
       <div v-if="showModal" class="modal-overlay" @click.self="closeModal">

@@ -1,12 +1,8 @@
 <template>
     <div>
-    <ul>
+    <ul class="user-collection-grid">
         <li v-for="item in collection" :key="item.game_id">
-            <!-- <GameCard :item="item" /> -->
-             <div>
-                {{ item.game_name }}
-             </div>
-            
+            <GameCardCollection :item="item" />            
         </li>
     </ul>
     </div>
@@ -14,7 +10,7 @@
 
 <script setup lang="ts">
 import type { CollectionItem } from "~/types/collection";
-import GameCard from './GameCard.vue';
+import GameCardCollection from './GameCardCollection.vue';
 
 const config = useRuntimeConfig()
 const { data: collection } = await useFetch<CollectionItem[]>(`${config.public.apiUrl}/collections`)
